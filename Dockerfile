@@ -15,4 +15,5 @@ RUN make -C sassc-${SASSC_VERSION} -j4
 
 RUN cp sassc-${SASSC_VERSION}/bin/sassc /sassc
 
-ENTRYPOINT /sassc
+ENTRYPOINT ["/sassc"]
+
