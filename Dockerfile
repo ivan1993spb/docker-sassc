@@ -1,0 +1,18 @@
+FROM alpine:3.7
+
+ARG SASSC_VERSION="3.4.5"
+ARG LIBSASS_VERSION="3.4.5"
+
+RUN apk add --no-cache curl build-base \
+ && curl -L https://github.com/sass/sassc/archive/${SASSC_VERSION}.tar.gz | tar -xz \
+ && curl -L https://github.com/sass/libsass/archive/${LIBSASS_VERSION}.tar.gz | tar -xz \
+ && echo $SASSC_VERSION > sassc-${SASSC_VERSION}/VERSION \
+ && echo $LIBSASS_VERSION > libsass-${LIBSASS_VERSION}/VERSION
+
+ENV SASS_LIBSASS_PATH /libsass-${LIBSASS_VERSION}
+
+RUN make -C sassc-${SASSC_VERSION} -j4
+
+RUN cp sassc-${SASSC_VERSION}/bin/sassc /sassc
+
+ENTRYPOINT /sassc
