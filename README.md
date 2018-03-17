@@ -1,4 +1,4 @@
-# sassc
+# sassc [options] [input] [output]
 
 ## Tags
 
