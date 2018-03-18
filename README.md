@@ -2,6 +2,8 @@
 
 `docker pull ivan1993spb/sassc:latest`
 
+[docker hub](https://hub.docker.com/r/ivan1993spb/sassc/)
+
 ## Tags
 
 * *latest* - [latest/Dockerfile](https://github.com/ivan1993spb/docker-sassc/blob/master/latest/Dockerfile)
@@ -15,7 +17,7 @@ docker run --rm -v $PWD:$PWD -w $PWD ivan1993spb/sassc input.sass output.css
 docker run --rm ivan1993spb/sassc -h
 ```
 
-## Links
+## Depends on
 
 * https://github.com/sass/sassc/
 * https://github.com/sass/libsass/
