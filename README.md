@@ -18,6 +18,13 @@ docker run --rm -v $PWD:$PWD -w $PWD ivan1993spb/sassc input.sass output.css
 docker run --rm ivan1993spb/sassc -h
 ```
 
+You can create alias with:
+
+```
+alias sassc='docker run --rm -v $(pwd):$(pwd) -w $(pwd) ivan1993spb/sassc:3.5.0'
+sassc --help
+```
+
 ## Depends on
 
 * https://github.com/sass/sassc/
